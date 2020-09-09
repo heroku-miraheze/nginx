@@ -1,0 +1,4 @@
+dist: focal
+language: generic
+script:
+  - ./build.sh trg

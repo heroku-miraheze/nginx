@@ -1,0 +1,613 @@
+User Environment
+----------------
+
+APT_CONFIG=/var/lib/sbuild/apt.conf
+DEB_BUILD_OPTIONS=parallel=4
+HOME=/sbuild-nonexistent
+LANG=C.UTF-8
+LC_ALL=C.UTF-8
+LOGNAME=buildd
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+SCHROOT_ALIAS_NAME=build-PACKAGEBUILD-19885462
+SCHROOT_CHROOT_NAME=build-PACKAGEBUILD-19885462
+SCHROOT_COMMAND=env
+SCHROOT_GID=2501
+SCHROOT_GROUP=buildd
+SCHROOT_SESSION_ID=build-PACKAGEBUILD-19885462
+SCHROOT_UID=2001
+SCHROOT_USER=buildd
+SHELL=/bin/sh
+TERM=unknown
+USER=buildd
+V=1
+
+dpkg-buildpackage
+-----------------
+
+dpkg-buildpackage: info: source package nginx
+dpkg-buildpackage: info: source version 1.18.0-6ubuntu2
+dpkg-buildpackage: info: source distribution groovy
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean --without autoreconf
+   debian/rules override_dh_clean
+make[1]: Entering directory '/<<PKGBUILDDIR>>'
+if [ -s /<<PKGBUILDDIR>>/debian/modules/http-cache-purge/.pc/applied-patches ]; then \
+	cd /<<PKGBUILDDIR>>/debian/modules/http-cache-purge && QUILT_PATCHES=/<<PKGBUILDDIR>>/debian/modules/patches/http-cache-purge quilt pop -q -a; \
+	rm -rf /<<PKGBUILDDIR>>/debian/modules/http-cache-purge/.pc; \
+fi
+if [ -s /<<PKGBUILDDIR>>/debian/modules/http-lua/.pc/applied-patches ]; then \
+	cd /<<PKGBUILDDIR>>/debian/modules/http-lua && QUILT_PATCHES=/<<PKGBUILDDIR>>/debian/modules/patches/http-lua quilt pop -q -a; \
+	rm -rf /<<PKGBUILDDIR>>/debian/modules/http-lua/.pc; \
+fi
+if [ -s /<<PKGBUILDDIR>>/debian/modules/http-subs-filter/.pc/applied-patches ]; then \
+	cd /<<PKGBUILDDIR>>/debian/modules/http-subs-filter && QUILT_PATCHES=/<<PKGBUILDDIR>>/debian/modules/patches/http-subs-filter quilt pop -q -a; \
+	rm -rf /<<PKGBUILDDIR>>/debian/modules/http-subs-filter/.pc; \
+fi
+if [ -s /<<PKGBUILDDIR>>/debian/modules/http-upstream-fair/.pc/applied-patches ]; then \
+	cd /<<PKGBUILDDIR>>/debian/modules/http-upstream-fair && QUILT_PATCHES=/<<PKGBUILDDIR>>/debian/modules/patches/http-upstream-fair quilt pop -q -a; \
+	rm -rf /<<PKGBUILDDIR>>/debian/modules/http-upstream-fair/.pc; \
+fi
+if [ -s /<<PKGBUILDDIR>>/debian/modules/nchan/.pc/applied-patches ]; then \
+	cd /<<PKGBUILDDIR>>/debian/modules/nchan && QUILT_PATCHES=/<<PKGBUILDDIR>>/debian/modules/patches/nchan quilt pop -q -a; \
+	rm -rf /<<PKGBUILDDIR>>/debian/modules/nchan/.pc; \
+fi
+rm -rf /<<PKGBUILDDIR>>/debian/build-core
+rm -rf /<<PKGBUILDDIR>>/debian/build-light
+rm -rf /<<PKGBUILDDIR>>/debian/build-extras
+dh_clean
+	rm -f debian/debhelper-build-stamp
+	rm -rf debian/.debhelper/
+	rm -f -- debian/nginx.substvars debian/nginx-doc.substvars debian/nginx-common.substvars debian/nginx-core.substvars debian/nginx-full.substvars debian/nginx-light.substvars debian/nginx-extras.substvars debian/libnginx-mod-http-geoip.substvars debian/libnginx-mod-http-geoip2.substvars debian/libnginx-mod-http-image-filter.substvars debian/libnginx-mod-http-xslt-filter.substvars debian/libnginx-mod-mail.substvars debian/libnginx-mod-stream.substvars debian/libnginx-mod-stream-geoip.substvars debian/libnginx-mod-stream-geoip2.substvars debian/libnginx-mod-http-perl.substvars debian/libnginx-mod-http-auth-pam.substvars debian/libnginx-mod-http-lua.substvars debian/libnginx-mod-http-ndk.substvars debian/libnginx-mod-nchan.substvars debian/libnginx-mod-http-echo.substvars debian/libnginx-mod-http-upstream-fair.substvars debian/libnginx-mod-http-headers-more-filter.substvars debian/libnginx-mod-http-cache-purge.substvars debian/libnginx-mod-http-fancyindex.substvars debian/libnginx-mod-http-uploadprogress.substvars debian/libnginx-mod-http-subs-filter.substvars debian/libnginx-mod-http-dav-ext.substvars debian/libnginx-mod-rtmp.substvars debian/files
+	rm -fr -- debian/nginx/ debian/tmp/ debian/nginx-doc/ debian/nginx-common/ debian/nginx-core/ debian/nginx-full/ debian/nginx-light/ debian/nginx-extras/ debian/libnginx-mod-http-geoip/ debian/libnginx-mod-http-geoip2/ debian/libnginx-mod-http-image-filter/ debian/libnginx-mod-http-xslt-filter/ debian/libnginx-mod-mail/ debian/libnginx-mod-stream/ debian/libnginx-mod-stream-geoip/ debian/libnginx-mod-stream-geoip2/ debian/libnginx-mod-http-perl/ debian/libnginx-mod-http-auth-pam/ debian/libnginx-mod-http-lua/ debian/libnginx-mod-http-ndk/ debian/libnginx-mod-nchan/ debian/libnginx-mod-http-echo/ debian/libnginx-mod-http-upstream-fair/ debian/libnginx-mod-http-headers-more-filter/ debian/libnginx-mod-http-cache-purge/ debian/libnginx-mod-http-fancyindex/ debian/libnginx-mod-http-uploadprogress/ debian/libnginx-mod-http-subs-filter/ debian/libnginx-mod-http-dav-ext/ debian/libnginx-mod-rtmp/
+	find .  \( \( \
+		\( -path .\*/.git -o -path .\*/.svn -o -path .\*/.bzr -o -path .\*/.hg -o -path .\*/CVS -o -path .\*/.pc -o -path .\*/_darcs \) -prune -o -type f -a \
+	        \( -name '#*#' -o -name '.*~' -o -name '*~' -o -name DEADJOE \
+		 -o -name '*.orig' -o -name '*.rej' -o -name '*.bak' \
+		 -o -name '.*.orig' -o -name .*.rej -o -name '.SUMS' \
+		 -o -name TAGS -o \( -path '*/.deps/*' -a -name '*.P' \) \
+		\) -exec rm -f {} + \) -o \
+		\( -type d -a -name autom4te.cache -prune -exec rm -rf {} + \) \)
+make[1]: Leaving directory '/<<PKGBUILDDIR>>'
+ debian/rules binary
+dh binary --without autoreconf
+   dh_update_autotools_config
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/<<PKGBUILDDIR>>'
+cd /<<PKGBUILDDIR>>/debian/modules/http-cache-purge && QUILT_PATCHES=/<<PKGBUILDDIR>>/debian/modules/patches/http-cache-purge quilt push -a
+cd /<<PKGBUILDDIR>>/debian/modules/http-lua && QUILT_PATCHES=/<<PKGBUILDDIR>>/debian/modules/patches/http-lua quilt push -a
+cd /<<PKGBUILDDIR>>/debian/modules/http-subs-filter && QUILT_PATCHES=/<<PKGBUILDDIR>>/debian/modules/patches/http-subs-filter quilt push -a
+cd /<<PKGBUILDDIR>>/debian/modules/http-upstream-fair && QUILT_PATCHES=/<<PKGBUILDDIR>>/debian/modules/patches/http-upstream-fair quilt push -a
+Applying patch /<<PKGBUILDDIR>>/debian/modules/patches/http-subs-filter/dynamic-module.patch
+patching file config
+
+Now at patch /<<PKGBUILDDIR>>/debian/modules/patches/http-subs-filter/dynamic-module.patch
+cd /<<PKGBUILDDIR>>/debian/modules/nchan && QUILT_PATCHES=/<<PKGBUILDDIR>>/debian/modules/patches/nchan quilt push -a
+Applying patch /<<PKGBUILDDIR>>/debian/modules/patches/http-lua/discover-luajit-2.1.patch
+patching file config
+
+Applying patch /<<PKGBUILDDIR>>/debian/modules/patches/http-lua/CVE-2020-11724.patch
+patching file src/ngx_http_lua_subrequest.c
+patching file t/020-subrequest.t
+
+Now at patch /<<PKGBUILDDIR>>/debian/modules/patches/http-lua/CVE-2020-11724.patch
+dh_testdir
+Applying patch /<<PKGBUILDDIR>>/debian/modules/patches/http-cache-purge/dynamic-module.patch
+patching file config
+
+Applying patch /<<PKGBUILDDIR>>/debian/modules/patches/http-cache-purge/segfault-1.11.6.patch
+patching file ngx_cache_purge_module.c
+
+Now at patch /<<PKGBUILDDIR>>/debian/modules/patches/http-cache-purge/segfault-1.11.6.patch
+dh_testdir
+mkdir -p /<<PKGBUILDDIR>>/debian/build-core
+cp -Pa /<<PKGBUILDDIR>>/auto /<<PKGBUILDDIR>>/debian/build-core/
+Applying patch /<<PKGBUILDDIR>>/debian/modules/patches/http-upstream-fair/dynamic-module.patch
+patching file config
+
+Applying patch /<<PKGBUILDDIR>>/debian/modules/patches/http-upstream-fair/openssl-1.1.0.patch
+patching file ngx_http_upstream_fair_module.c
+
+Applying patch /<<PKGBUILDDIR>>/debian/modules/patches/http-upstream-fair/drop-default-port.patch
+patching file ngx_http_upstream_fair_module.c
+
+Now at patch /<<PKGBUILDDIR>>/debian/modules/patches/http-upstream-fair/drop-default-port.patch
+dh_testdir
+mkdir -p /<<PKGBUILDDIR>>/debian/build-light
+cp -Pa /<<PKGBUILDDIR>>/conf /<<PKGBUILDDIR>>/debian/build-core/
+cp -Pa /<<PKGBUILDDIR>>/auto /<<PKGBUILDDIR>>/debian/build-light/
+cp -Pa /<<PKGBUILDDIR>>/configure /<<PKGBUILDDIR>>/debian/build-core/
+cp -Pa /<<PKGBUILDDIR>>/contrib /<<PKGBUILDDIR>>/debian/build-core/
+cp -Pa /<<PKGBUILDDIR>>/src /<<PKGBUILDDIR>>/debian/build-core/
+cp -Pa /<<PKGBUILDDIR>>/conf /<<PKGBUILDDIR>>/debian/build-light/
+cp -Pa /<<PKGBUILDDIR>>/configure /<<PKGBUILDDIR>>/debian/build-light/
+cp -Pa /<<PKGBUILDDIR>>/contrib /<<PKGBUILDDIR>>/debian/build-light/
+Applying patch /<<PKGBUILDDIR>>/debian/modules/patches/nchan/gcc-10-compatibility.patch
+patching file src/store/memory/memstore.c
+patching file src/store/memory/store-private.h
+patching file src/store/redis/redis_lua_commands.h
+
+Now at patch /<<PKGBUILDDIR>>/debian/modules/patches/nchan/gcc-10-compatibility.patch
+cp -Pa /<<PKGBUILDDIR>>/src /<<PKGBUILDDIR>>/debian/build-light/
+cp -Pa /<<PKGBUILDDIR>>/man /<<PKGBUILDDIR>>/debian/build-core/
+cd /<<PKGBUILDDIR>>/debian/build-core && ./configure --with-cc-opt="-g -O2 -fdebug-prefix-map=/<<PKGBUILDDIR>>=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC -Wdate-time -D_FORTIFY_SOURCE=2" --with-ld-opt="-Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fPIC" --prefix=/usr/share/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --modules-path=/usr/lib/nginx/modules --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --with-compat --with-debug --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_v2_module --with-http_dav_module --with-http_slice_module --with-threads --with-http_addition_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_sub_module 
+mkdir -p /<<PKGBUILDDIR>>/debian/build-extras
+cp -Pa /<<PKGBUILDDIR>>/auto /<<PKGBUILDDIR>>/debian/build-extras/
+cp -Pa /<<PKGBUILDDIR>>/man /<<PKGBUILDDIR>>/debian/build-light/
+cp -Pa /<<PKGBUILDDIR>>/conf /<<PKGBUILDDIR>>/debian/build-extras/
+cd /<<PKGBUILDDIR>>/debian/build-light && ./configure --with-cc-opt="-g -O2 -fdebug-prefix-map=/<<PKGBUILDDIR>>=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC -Wdate-time -D_FORTIFY_SOURCE=2" --with-ld-opt="-Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fPIC" --prefix=/usr/share/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --modules-path=/usr/lib/nginx/modules --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --with-compat --with-debug --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_v2_module --with-http_dav_module --with-http_slice_module --with-threads --with-http_gzip_static_module --without-http_browser_module --without-http_geo_module --without-http_limit_req_module --without-http_limit_conn_module --without-http_memcached_module --without-http_referer_module --without-http_split_clients_module --without-http_userid_module
+cp -Pa /<<PKGBUILDDIR>>/configure /<<PKGBUILDDIR>>/debian/build-extras/
+cp -Pa /<<PKGBUILDDIR>>/contrib /<<PKGBUILDDIR>>/debian/build-extras/
+cp -Pa /<<PKGBUILDDIR>>/src /<<PKGBUILDDIR>>/debian/build-extras/
+cp -Pa /<<PKGBUILDDIR>>/man /<<PKGBUILDDIR>>/debian/build-extras/
+cd /<<PKGBUILDDIR>>/debian/build-extras && ./configure --with-cc-opt="-g -O2 -fdebug-prefix-map=/<<PKGBUILDDIR>>=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC -Wdate-time -D_FORTIFY_SOURCE=2" --with-ld-opt="-Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fPIC" --prefix=/usr/share/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --modules-path=/usr/lib/nginx/modules --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --with-compat --with-debug --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_v2_module --with-http_dav_module --with-http_slice_module --with-threads --with-http_addition_module --with-http_flv_module --with-http_geoip_module=dynamic --with-http_gunzip_module --with-http_gzip_static_module --with-http_image_filter_module=dynamic --with-http_mp4_module --with-http_perl_module=dynamic --with-http_random_index_module --with-http_secure_link_module --with-http_sub_module --with-http_xslt_module=dynamic --with-mail=dynamic --with-mail_ssl_module --with-stream=dynamic --with-stream_geoip_module=dynamic --with-stream_ssl_module --with-stream_ssl_preread_module --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/http-headers-more-filter --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/http-auth-pam --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/http-cache-purge --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/http-dav-ext --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/http-ndk --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/http-echo --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/http-fancyindex --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/http-geoip2 --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/nchan --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/http-lua --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/rtmp --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/http-uploadprogress --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/http-upstream-fair --add-dynamic-module=/<<PKGBUILDDIR>>/debian/modules/http-subs-filter
+checking for OS
+ + Linux 4.15.0-112-generic x86_64
+checking for C compiler ...checking for OS
+ + Linux 4.15.0-112-generic x86_64
+checking for C compiler ... found
+ + using GNU C compiler
+checking for --with-ld-opt="-Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fPIC" ... found
+ + using GNU C compiler
+checking for --with-ld-opt="-Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fPIC" ... found
+checking for -Wl,-E switch ... found
+checking for -Wl,-E switch ...checking for OS
+ + Linux 4.15.0-112-generic x86_64
+checking for C compiler ... found
+checking for gcc builtin atomic operations ... found
+checking for gcc builtin atomic operations ... found
+ + using GNU C compiler
+checking for --with-ld-opt="-Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fPIC" ... found
+checking for C99 variadic macros ... found
+checking for C99 variadic macros ... found
+checking for -Wl,-E switch ... found
+checking for gcc variadic macros ... found
+checking for gcc variadic macros ... found
+checking for gcc builtin atomic operations ... found
+checking for gcc builtin 64 bit byteswap ... found
+checking for gcc builtin 64 bit byteswap ... found
+checking for C99 variadic macros ... found
+checking for unistd.h ... found
+checking for unistd.h ... found
+checking for gcc variadic macros ... found
+ found
+checking for inttypes.h ...checking for inttypes.h ... found
+ found
+checking for limits.h ...checking for limits.h ... found
+checking for gcc builtin 64 bit byteswap ... found
+ found
+checking for sys/filio.h ...checking for sys/filio.h ... found
+checking for unistd.h ... not found
+ not found
+checking for sys/param.h ...checking for sys/param.h ... found
+checking for inttypes.h ... found
+ found
+checking for sys/mount.h ...checking for sys/mount.h ... found
+checking for limits.h ... found
+ found
+checking for sys/statvfs.h ...checking for sys/statvfs.h ... found
+checking for sys/filio.h ... not found
+checking for sys/param.h ... found
+ found
+checking for crypt.h ...checking for crypt.h ... found
+checking for sys/mount.h ... found
+ found
+checking for Linux specific features
+checking for Linux specific features
+checking for epoll ...checking for epoll ... found
+checking for sys/statvfs.h ... found
+ found
+checking for EPOLLRDHUP ...checking for EPOLLRDHUP ... found
+checking for crypt.h ... found
+checking for EPOLLEXCLUSIVE ... found
+checking for EPOLLEXCLUSIVE ... found
+checking for Linux specific features
+checking for epoll ... found
+ found
+checking for O_PATH ...checking for O_PATH ... found
+checking for EPOLLRDHUP ... found
+ found
+checking for sendfile() ...checking for sendfile() ... found
+checking for EPOLLEXCLUSIVE ... found
+checking for sendfile64() ... found
+checking for sendfile64() ... found
+checking for O_PATH ... found
+checking for sys/prctl.h ... found
+checking for sys/prctl.h ... found
+checking for sendfile() ... found
+checking for prctl(PR_SET_DUMPABLE) ... found
+checking for prctl(PR_SET_DUMPABLE) ... found
+checking for sendfile64() ... found
+checking for prctl(PR_SET_KEEPCAPS) ... found
+checking for prctl(PR_SET_KEEPCAPS) ... found
+checking for sys/prctl.h ... found
+checking for capabilities ... found
+checking for capabilities ... found
+checking for prctl(PR_SET_DUMPABLE) ... found
+checking for crypt_r() ... found
+checking for crypt_r() ... found
+checking for prctl(PR_SET_KEEPCAPS) ... found
+checking for sys/vfs.h ... found
+checking for sys/vfs.h ... found
+checking for capabilities ... found
+checking for nobody group ... not found
+checking for nogroup group ... found
+checking for poll() ... found
+ found
+checking for crypt_r() ...checking for nobody group ... not found
+checking for nogroup group ... found
+checking for poll() ... found
+checking for /dev/poll ... not found
+checking for kqueue ... found
+ found
+checking for /dev/poll ...checking for sys/vfs.h ... not found
+checking for crypt() ... not found
+checking for kqueue ... found
+checking for nobody group ... not found
+ not found
+checking for nogroup group ... found
+checking for poll() ...checking for crypt() ... not found
+checking for crypt() in libcrypt ... not found
+ found
+checking for /dev/poll ...checking for crypt() in libcrypt ... found
+checking for F_READAHEAD ... not found
+checking for kqueue ... not found
+checking for posix_fadvise() ... not found
+checking for crypt() ... found
+checking for F_READAHEAD ... not found
+checking for posix_fadvise() ... not found
+ found
+checking for crypt() in libcrypt ...checking for O_DIRECT ... found
+checking for O_DIRECT ... found
+checking for F_READAHEAD ... found
+checking for F_NOCACHE ... not found
+checking for posix_fadvise() ... found
+checking for F_NOCACHE ... not found
+checking for directio() ... not found
+checking for directio() ... not found
+checking for statfs() ... found
+checking for O_DIRECT ... not found
+checking for statfs() ... found
+checking for statvfs() ... found
+checking for F_NOCACHE ... found
+checking for statvfs() ... not found
+checking for directio() ... found
+checking for dlopen() ... not found
+checking for statfs() ... found
+checking for dlopen() ... not found
+checking for dlopen() in libdl ... found
+checking for statvfs() ... not found
+checking for dlopen() in libdl ... found
+ found
+checking for sched_yield() ...checking for dlopen() ... found
+checking for sched_yield() ... found
+ not found
+checking for sched_setaffinity() ...checking for dlopen() in libdl ... found
+checking for sched_setaffinity() ... found
+ found
+checking for SO_SETFIB ...checking for sched_yield() ... not found
+checking for SO_REUSEPORT ... found
+checking for SO_SETFIB ... found
+checking for sched_setaffinity() ... not found
+checking for SO_REUSEPORT ... found
+checking for SO_ACCEPTFILTER ... not found
+checking for SO_BINDANY ... found
+checking for SO_SETFIB ... found
+checking for SO_ACCEPTFILTER ... not found
+checking for IP_TRANSPARENT ... not found
+checking for SO_REUSEPORT ... not found
+checking for SO_BINDANY ... not found
+checking for IP_TRANSPARENT ... found
+checking for IP_BINDANY ... found
+checking for SO_ACCEPTFILTER ... not found
+checking for IP_BIND_ADDRESS_NO_PORT ... not found
+checking for SO_BINDANY ... found
+checking for IP_BINDANY ... not found
+checking for IP_TRANSPARENT ... not found
+checking for IP_BIND_ADDRESS_NO_PORT ... found
+checking for IP_RECVDSTADDR ... found
+checking for IP_BINDANY ... not found
+checking for IP_SENDSRCADDR ... found
+checking for IP_RECVDSTADDR ... not found
+checking for IP_BIND_ADDRESS_NO_PORT ... not found
+checking for IP_PKTINFO ... not found
+checking for IP_SENDSRCADDR ... not found
+checking for IP_PKTINFO ... found
+checking for IP_RECVDSTADDR ... found
+checking for IPV6_RECVPKTINFO ... not found
+checking for IP_SENDSRCADDR ... found
+checking for IPV6_RECVPKTINFO ... not found
+checking for IP_PKTINFO ... found
+checking for TCP_DEFER_ACCEPT ... found
+checking for TCP_DEFER_ACCEPT ... found
+checking for IPV6_RECVPKTINFO ... found
+checking for TCP_KEEPIDLE ... found
+checking for TCP_KEEPIDLE ... found
+checking for TCP_DEFER_ACCEPT ... found
+checking for TCP_FASTOPEN ... found
+checking for TCP_FASTOPEN ... found
+checking for TCP_KEEPIDLE ... found
+checking for TCP_INFO ... found
+checking for TCP_INFO ... found
+checking for TCP_FASTOPEN ... found
+checking for accept4() ... found
+checking for accept4() ... found
+checking for TCP_INFO ... found
+checking for eventfd() ... found
+checking for eventfd() ... found
+checking for accept4() ... found
+checking for int size ... found
+checking for int size ... found
+checking for eventfd() ... 4 bytes
+checking for long size ... 4 bytes
+checking for long size ... found
+checking for int size ... 8 bytes
+checking for long long size ... 8 bytes
+checking for long long size ... 4 bytes
+checking for long size ... 8 bytes
+checking for void * size ... 8 bytes
+checking for void * size ... 8 bytes
+checking for long long size ... 8 bytes
+checking for uint32_t ... 8 bytes
+checking for uint32_t ... 8 bytes
+checking for void * size ... found
+checking for uint64_t ... found
+checking for uint64_t ... 8 bytes
+checking for uint32_t ... found
+checking for sig_atomic_t ... found
+checking for sig_atomic_t ... found
+checking for uint64_t ... found
+checking for sig_atomic_t size ... found
+checking for sig_atomic_t size ... found
+checking for sig_atomic_t ... 4 bytes
+checking for socklen_t ... 4 bytes
+ found
+checking for sig_atomic_t size ...checking for socklen_t ... found
+checking for in_addr_t ... found
+checking for in_addr_t ... 4 bytes
+checking for socklen_t ... found
+checking for in_port_t ... found
+checking for in_port_t ... found
+checking for in_addr_t ... found
+checking for rlim_t ... found
+checking for rlim_t ... found
+checking for in_port_t ... found
+checking for uintptr_t ... found
+checking for uintptr_t ... found
+checking for rlim_t ... uintptr_t found
+checking for system byte ordering ... uintptr_t found
+checking for system byte ordering ... little endian
+checking for size_t size ... found
+checking for uintptr_t ... little endian
+checking for size_t size ... uintptr_t found
+checking for system byte ordering ... 8 bytes
+checking for off_t size ... 8 bytes
+checking for off_t size ... little endian
+checking for size_t size ... 8 bytes
+checking for time_t size ... 8 bytes
+checking for time_t size ... 8 bytes
+checking for off_t size ... 8 bytes
+checking for AF_INET6 ... 8 bytes
+ 8 bytes
+checking for AF_INET6 ...checking for time_t size ... found
+checking for setproctitle() ... found
+checking for setproctitle() ... 8 bytes
+checking for AF_INET6 ... not found
+checking for pread/.debhelper/libnginx-mod-nchan/dbgsym-root debian/.debhelper/scratch-space/build-libnginx-mod-nchan
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-nchan-dbgsym (in debian/.debhelper/libnginx-mod-nchan/dbgsym-root); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-nchan-dbgsym does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+INFO: pkgstripfiles: waiting for lock (libnginx-mod-http-cache-purge) ...
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/.debhelper/libnginx-mod-nchan/dbgsym-root/DEBIAN/control, package libnginx-mod-nchan-dbgsym, directory debian/.debhelper/libnginx-mod-nchan/dbgsym-root
+dpkg-deb: building package 'libnginx-mod-nchan-dbgsym' in 'debian/.debhelper/scratch-space/build-libnginx-mod-nchan/libnginx-mod-nchan-dbgsym_1.18.0-6ubuntu2_amd64.deb'.
+	Renaming libnginx-mod-nchan-dbgsym_1.18.0-6ubuntu2_amd64.deb to libnginx-mod-nchan-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	mv debian/.debhelper/scratch-space/build-libnginx-mod-nchan/libnginx-mod-nchan-dbgsym_1.18.0-6ubuntu2_amd64.deb ../libnginx-mod-nchan-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	dpkg-deb --root-owner-group --build debian/libnginx-mod-http-echo ..
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-echo (in debian/libnginx-mod-http-echo); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-echo does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/libnginx-mod-http-echo/DEBIAN/control, package libnginx-mod-http-echo, directory debian/libnginx-mod-http-echo
+Skipping arch: any to arch: all dependency to nginx-common
+pkgstripfiles: Truncating usr/share/doc/libnginx-mod-http-echo/changelog.Debian.gz to topmost ten records
+pkgstripfiles: Running PNG optimization (using 4 cpus) for package libnginx-mod-http-echo ...
+pkgstripfiles: No PNG files.
+dpkg-deb: building package 'libnginx-mod-http-echo' in '../libnginx-mod-http-echo_1.18.0-6ubuntu2_amd64.deb'.
+	install -d debian/.debhelper/scratch-space/build-libnginx-mod-http-echo
+	dpkg-deb --root-owner-group --build debian/.debhelper/libnginx-mod-http-echo/dbgsym-root debian/.debhelper/scratch-space/build-libnginx-mod-http-echo
+INFO: pkgstripfiles: waiting for lock (libnginx-mod-http-cache-purge) ...
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-echo-dbgsym (in debian/.debhelper/libnginx-mod-http-echo/dbgsym-root); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-echo-dbgsym does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/.debhelper/libnginx-mod-http-echo/dbgsym-root/DEBIAN/control, package libnginx-mod-http-echo-dbgsym, directory debian/.debhelper/libnginx-mod-http-echo/dbgsym-root
+dpkg-deb: building package 'libnginx-mod-http-echo-dbgsym' in 'debian/.debhelper/scratch-space/build-libnginx-mod-http-echo/libnginx-mod-http-echo-dbgsym_1.18.0-6ubuntu2_amd64.deb'.
+	Renaming libnginx-mod-http-echo-dbgsym_1.18.0-6ubuntu2_amd64.deb to libnginx-mod-http-echo-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	mv debian/.debhelper/scratch-space/build-libnginx-mod-http-echo/libnginx-mod-http-echo-dbgsym_1.18.0-6ubuntu2_amd64.deb ../libnginx-mod-http-echo-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	dpkg-deb --root-owner-group --build debian/libnginx-mod-http-upstream-fair ..
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-upstream-fair (in debian/libnginx-mod-http-upstream-fair); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-upstream-fair does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/libnginx-mod-http-upstream-fair/DEBIAN/control, package libnginx-mod-http-upstream-fair, directory debian/libnginx-mod-http-upstream-fair
+Skipping arch: any to arch: all dependency to nginx-common
+pkgstripfiles: Truncating usr/share/doc/libnginx-mod-http-upstream-fair/changelog.Debian.gz to topmost ten records
+pkgstripfiles: Running PNG optimization (using 4 cpus) for package libnginx-mod-http-upstream-fair ...
+pkgstripfiles: No PNG files.
+dpkg-deb: building package 'libnginx-mod-http-upstream-fair' in '../libnginx-mod-http-upstream-fair_1.18.0-6ubuntu2_amd64.deb'.
+	install -d debian/.debhelper/scratch-space/build-libnginx-mod-http-upstream-fair
+	dpkg-deb --root-owner-group --build debian/.debhelper/libnginx-mod-http-upstream-fair/dbgsym-root debian/.debhelper/scratch-space/build-libnginx-mod-http-upstream-fair
+INFO: pkgstripfiles: waiting for lock (libnginx-mod-http-cache-purge) ...
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-upstream-fair-dbgsym (in debian/.debhelper/libnginx-mod-http-upstream-fair/dbgsym-root); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-upstream-fair-dbgsym does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/.debhelper/libnginx-mod-http-upstream-fair/dbgsym-root/DEBIAN/control, package libnginx-mod-http-upstream-fair-dbgsym, directory debian/.debhelper/libnginx-mod-http-upstream-fair/dbgsym-root
+dpkg-deb: building package 'libnginx-mod-http-upstream-fair-dbgsym' in 'debian/.debhelper/scratch-space/build-libnginx-mod-http-upstream-fair/libnginx-mod-http-upstream-fair-dbgsym_1.18.0-6ubuntu2_amd64.deb'.
+	Renaming libnginx-mod-http-upstream-fair-dbgsym_1.18.0-6ubuntu2_amd64.deb to libnginx-mod-http-upstream-fair-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	mv debian/.debhelper/scratch-space/build-libnginx-mod-http-upstream-fair/libnginx-mod-http-upstream-fair-dbgsym_1.18.0-6ubuntu2_amd64.deb ../libnginx-mod-http-upstream-fair-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	dpkg-deb --root-owner-group --build debian/libnginx-mod-http-headers-more-filter ..
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-headers-more-filter (in debian/libnginx-mod-http-headers-more-filter); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-headers-more-filter does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/libnginx-mod-http-headers-more-filter/DEBIAN/control, package libnginx-mod-http-headers-more-filter, directory debian/libnginx-mod-http-headers-more-filter
+Skipping arch: any to arch: all dependency to nginx-common
+pkgstripfiles: Truncating usr/share/doc/libnginx-mod-http-headers-more-filter/changelog.Debian.gz to topmost ten records
+pkgstripfiles: Running PNG optimization (using 4 cpus) for package libnginx-mod-http-headers-more-filter ...
+pkgstripfiles: No PNG files.
+dpkg-deb: building package 'libnginx-mod-http-headers-more-filter' in '../libnginx-mod-http-headers-more-filter_1.18.0-6ubuntu2_amd64.deb'.
+Skipping arch: any to arch: all dependency to nginx-common
+pkgstripfiles: Truncating usr/share/doc/libnginx-mod-http-cache-purge/changelog.Debian.gz to topmost ten records
+pkgstripfiles: Running PNG optimization (using 4 cpus) for package libnginx-mod-http-cache-purge ...
+pkgstripfiles: No PNG files.
+	install -d debian/.debhelper/scratch-space/build-libnginx-mod-http-headers-more-filter
+	dpkg-deb --root-owner-group --build debian/.debhelper/libnginx-mod-http-headers-more-filter/dbgsym-root debian/.debhelper/scratch-space/build-libnginx-mod-http-headers-more-filter
+dpkg-deb: building package 'libnginx-mod-http-cache-purge' in '../libnginx-mod-http-cache-purge_1.18.0-6ubuntu2_amd64.deb'.
+	install -d debian/.debhelper/scratch-space/build-libnginx-mod-http-cache-purge
+	dpkg-deb --root-owner-group --build debian/.debhelper/libnginx-mod-http-cache-purge/dbgsym-root debian/.debhelper/scratch-space/build-libnginx-mod-http-cache-purge
+INFO: pkgstriptranslations version 146
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-headers-more-filter-dbgsym (in debian/.debhelper/libnginx-mod-http-headers-more-filter/dbgsym-root); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-headers-more-filter-dbgsym does not contain translations, skipping
+pkgstriptranslations: processing libnginx-mod-http-cache-purge-dbgsym (in debian/.debhelper/libnginx-mod-http-cache-purge/dbgsym-root); do_strip: 1, oemstrip: 
+pkgstriptranslations: no translation files, not creating tarball
+pkgstriptranslations: libnginx-mod-http-cache-purge-dbgsym does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/.debhelper/libnginx-mod-http-headers-more-filter/dbgsym-root/DEBIAN/control, package libnginx-mod-http-headers-more-filter-dbgsym, directory debian/.debhelper/libnginx-mod-http-headers-more-filter/dbgsym-root
+dpkg-deb: building package 'libnginx-mod-http-headers-more-filter-dbgsym' in 'debian/.debhelper/scratch-space/build-libnginx-mod-http-headers-more-filter/libnginx-mod-http-headers-more-filter-dbgsym_1.18.0-6ubuntu2_amd64.deb'.
+	Renaming libnginx-mod-http-headers-more-filter-dbgsym_1.18.0-6ubuntu2_amd64.deb to libnginx-mod-http-headers-more-filter-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	mv debian/.debhelper/scratch-space/build-libnginx-mod-http-headers-more-filter/libnginx-mod-http-headers-more-filter-dbgsym_1.18.0-6ubuntu2_amd64.deb ../libnginx-mod-http-headers-more-filter-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+pkgstripfiles: processing control file: debian/.debhelper/libnginx-mod-http-cache-purge/dbgsym-root/DEBIAN/control, package libnginx-mod-http-cache-purge-dbgsym, directory debian/.debhelper/libnginx-mod-http-cache-purge/dbgsym-root
+dpkg-deb: building package 'libnginx-mod-http-cache-purge-dbgsym' in 'debian/.debhelper/scratch-space/build-libnginx-mod-http-cache-purge/libnginx-mod-http-cache-purge-dbgsym_1.18.0-6ubuntu2_amd64.deb'.
+	Renaming libnginx-mod-http-cache-purge-dbgsym_1.18.0-6ubuntu2_amd64.deb to libnginx-mod-http-cache-purge-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	mv debian/.debhelper/scratch-space/build-libnginx-mod-http-cache-purge/libnginx-mod-http-cache-purge-dbgsym_1.18.0-6ubuntu2_amd64.deb ../libnginx-mod-http-cache-purge-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	dpkg-deb --root-owner-group --build debian/libnginx-mod-http-fancyindex ..
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-fancyindex (in debian/libnginx-mod-http-fancyindex); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-fancyindex does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/libnginx-mod-http-fancyindex/DEBIAN/control, package libnginx-mod-http-fancyindex, directory debian/libnginx-mod-http-fancyindex
+Skipping arch: any to arch: all dependency to nginx-common
+pkgstripfiles: Truncating usr/share/doc/libnginx-mod-http-fancyindex/changelog.Debian.gz to topmost ten records
+pkgstripfiles: Running PNG optimization (using 4 cpus) for package libnginx-mod-http-fancyindex ...
+pkgstripfiles: No PNG files.
+dpkg-deb: building package 'libnginx-mod-http-fancyindex' in '../libnginx-mod-http-fancyindex_1.18.0-6ubuntu2_amd64.deb'.
+	install -d debian/.debhelper/scratch-space/build-libnginx-mod-http-fancyindex
+	dpkg-deb --root-owner-group --build debian/.debhelper/libnginx-mod-http-fancyindex/dbgsym-root debian/.debhelper/scratch-space/build-libnginx-mod-http-fancyindex
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-fancyindex-dbgsym (in debian/.debhelper/libnginx-mod-http-fancyindex/dbgsym-root); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-fancyindex-dbgsym does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/.debhelper/libnginx-mod-http-fancyindex/dbgsym-root/DEBIAN/control, package libnginx-mod-http-fancyindex-dbgsym, directory debian/.debhelper/libnginx-mod-http-fancyindex/dbgsym-root
+dpkg-deb: building package 'libnginx-mod-http-fancyindex-dbgsym' in 'debian/.debhelper/scratch-space/build-libnginx-mod-http-fancyindex/libnginx-mod-http-fancyindex-dbgsym_1.18.0-6ubuntu2_amd64.deb'.
+	Renaming libnginx-mod-http-fancyindex-dbgsym_1.18.0-6ubuntu2_amd64.deb to libnginx-mod-http-fancyindex-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	mv debian/.debhelper/scratch-space/build-libnginx-mod-http-fancyindex/libnginx-mod-http-fancyindex-dbgsym_1.18.0-6ubuntu2_amd64.deb ../libnginx-mod-http-fancyindex-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	dpkg-deb --root-owner-group --build debian/libnginx-mod-http-uploadprogress ..
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-uploadprogress (in debian/libnginx-mod-http-uploadprogress); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-uploadprogress does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/libnginx-mod-http-uploadprogress/DEBIAN/control, package libnginx-mod-http-uploadprogress, directory debian/libnginx-mod-http-uploadprogress
+Skipping arch: any to arch: all dependency to nginx-common
+pkgstripfiles: Truncating usr/share/doc/libnginx-mod-http-uploadprogress/changelog.Debian.gz to topmost ten records
+pkgstripfiles: Running PNG optimization (using 4 cpus) for package libnginx-mod-http-uploadprogress ...
+pkgstripfiles: No PNG files.
+dpkg-deb: building package 'libnginx-mod-http-uploadprogress' in '../libnginx-mod-http-uploadprogress_1.18.0-6ubuntu2_amd64.deb'.
+	install -d debian/.debhelper/scratch-space/build-libnginx-mod-http-uploadprogress
+	dpkg-deb --root-owner-group --build debian/.debhelper/libnginx-mod-http-uploadprogress/dbgsym-root debian/.debhelper/scratch-space/build-libnginx-mod-http-uploadprogress
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-uploadprogress-dbgsym (in debian/.debhelper/libnginx-mod-http-uploadprogress/dbgsym-root); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-uploadprogress-dbgsym does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/.debhelper/libnginx-mod-http-uploadprogress/dbgsym-root/DEBIAN/control, package libnginx-mod-http-uploadprogress-dbgsym, directory debian/.debhelper/libnginx-mod-http-uploadprogress/dbgsym-root
+dpkg-deb: building package 'libnginx-mod-http-uploadprogress-dbgsym' in 'debian/.debhelper/scratch-space/build-libnginx-mod-http-uploadprogress/libnginx-mod-http-uploadprogress-dbgsym_1.18.0-6ubuntu2_amd64.deb'.
+	Renaming libnginx-mod-http-uploadprogress-dbgsym_1.18.0-6ubuntu2_amd64.deb to libnginx-mod-http-uploadprogress-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	mv debian/.debhelper/scratch-space/build-libnginx-mod-http-uploadprogress/libnginx-mod-http-uploadprogress-dbgsym_1.18.0-6ubuntu2_amd64.deb ../libnginx-mod-http-uploadprogress-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	dpkg-deb --root-owner-group --build debian/libnginx-mod-http-subs-filter ..
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-subs-filter (in debian/libnginx-mod-http-subs-filter); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-subs-filter does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/libnginx-mod-http-subs-filter/DEBIAN/control, package libnginx-mod-http-subs-filter, directory debian/libnginx-mod-http-subs-filter
+Skipping arch: any to arch: all dependency to nginx-common
+pkgstripfiles: Truncating usr/share/doc/libnginx-mod-http-subs-filter/changelog.Debian.gz to topmost ten records
+pkgstripfiles: Running PNG optimization (using 4 cpus) for package libnginx-mod-http-subs-filter ...
+pkgstripfiles: No PNG files.
+dpkg-deb: building package 'libnginx-mod-http-subs-filter' in '../libnginx-mod-http-subs-filter_1.18.0-6ubuntu2_amd64.deb'.
+	install -d debian/.debhelper/scratch-space/build-libnginx-mod-http-subs-filter
+	dpkg-deb --root-owner-group --build debian/.debhelper/libnginx-mod-http-subs-filter/dbgsym-root debian/.debhelper/scratch-space/build-libnginx-mod-http-subs-filter
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-subs-filter-dbgsym (in debian/.debhelper/libnginx-mod-http-subs-filter/dbgsym-root); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-subs-filter-dbgsym does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/.debhelper/libnginx-mod-http-subs-filter/dbgsym-root/DEBIAN/control, package libnginx-mod-http-subs-filter-dbgsym, directory debian/.debhelper/libnginx-mod-http-subs-filter/dbgsym-root
+dpkg-deb: building package 'libnginx-mod-http-subs-filter-dbgsym' in 'debian/.debhelper/scratch-space/build-libnginx-mod-http-subs-filter/libnginx-mod-http-subs-filter-dbgsym_1.18.0-6ubuntu2_amd64.deb'.
+	Renaming libnginx-mod-http-subs-filter-dbgsym_1.18.0-6ubuntu2_amd64.deb to libnginx-mod-http-subs-filter-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	mv debian/.debhelper/scratch-space/build-libnginx-mod-http-subs-filter/libnginx-mod-http-subs-filter-dbgsym_1.18.0-6ubuntu2_amd64.deb ../libnginx-mod-http-subs-filter-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	dpkg-deb --root-owner-group --build debian/libnginx-mod-http-dav-ext ..
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-dav-ext (in debian/libnginx-mod-http-dav-ext); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-dav-ext does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/libnginx-mod-http-dav-ext/DEBIAN/control, package libnginx-mod-http-dav-ext, directory debian/libnginx-mod-http-dav-ext
+Skipping arch: any to arch: all dependency to nginx-common
+pkgstripfiles: Truncating usr/share/doc/libnginx-mod-http-dav-ext/changelog.Debian.gz to topmost ten records
+pkgstripfiles: Running PNG optimization (using 4 cpus) for package libnginx-mod-http-dav-ext ...
+pkgstripfiles: No PNG files.
+dpkg-deb: building package 'libnginx-mod-http-dav-ext' in '../libnginx-mod-http-dav-ext_1.18.0-6ubuntu2_amd64.deb'.
+	install -d debian/.debhelper/scratch-space/build-libnginx-mod-http-dav-ext
+	dpkg-deb --root-owner-group --build debian/.debhelper/libnginx-mod-http-dav-ext/dbgsym-root debian/.debhelper/scratch-space/build-libnginx-mod-http-dav-ext
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-http-dav-ext-dbgsym (in debian/.debhelper/libnginx-mod-http-dav-ext/dbgsym-root); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-http-dav-ext-dbgsym does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/.debhelper/libnginx-mod-http-dav-ext/dbgsym-root/DEBIAN/control, package libnginx-mod-http-dav-ext-dbgsym, directory debian/.debhelper/libnginx-mod-http-dav-ext/dbgsym-root
+dpkg-deb: building package 'libnginx-mod-http-dav-ext-dbgsym' in 'debian/.debhelper/scratch-space/build-libnginx-mod-http-dav-ext/libnginx-mod-http-dav-ext-dbgsym_1.18.0-6ubuntu2_amd64.deb'.
+	Renaming libnginx-mod-http-dav-ext-dbgsym_1.18.0-6ubuntu2_amd64.deb to libnginx-mod-http-dav-ext-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	mv debian/.debhelper/scratch-space/build-libnginx-mod-http-dav-ext/libnginx-mod-http-dav-ext-dbgsym_1.18.0-6ubuntu2_amd64.deb ../libnginx-mod-http-dav-ext-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	dpkg-deb --root-owner-group --build debian/libnginx-mod-rtmp ..
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-rtmp (in debian/libnginx-mod-rtmp); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-rtmp does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/libnginx-mod-rtmp/DEBIAN/control, package libnginx-mod-rtmp, directory debian/libnginx-mod-rtmp
+Skipping arch: any to arch: all dependency to nginx-common
+pkgstripfiles: Truncating usr/share/doc/libnginx-mod-rtmp/changelog.Debian.gz to topmost ten records
+pkgstripfiles: Running PNG optimization (using 4 cpus) for package libnginx-mod-rtmp ...
+pkgstripfiles: No PNG files.
+dpkg-deb: building package 'libnginx-mod-rtmp' in '../libnginx-mod-rtmp_1.18.0-6ubuntu2_amd64.deb'.
+	install -d debian/.debhelper/scratch-space/build-libnginx-mod-rtmp
+	dpkg-deb --root-owner-group --build debian/.debhelper/libnginx-mod-rtmp/dbgsym-root debian/.debhelper/scratch-space/build-libnginx-mod-rtmp
+INFO: pkgstriptranslations version 146
+pkgstriptranslations: processing libnginx-mod-rtmp-dbgsym (in debian/.debhelper/libnginx-mod-rtmp/dbgsym-root); do_strip: 1, oemstrip: 
+pkgstriptranslations: libnginx-mod-rtmp-dbgsym does not contain translations, skipping
+pkgstriptranslations: no translation files, not creating tarball
+pkgmaintainermangler: Not overriding Maintainer for domain lists.ubuntu.com
+pkgstripfiles: processing control file: debian/.debhelper/libnginx-mod-rtmp/dbgsym-root/DEBIAN/control, package libnginx-mod-rtmp-dbgsym, directory debian/.debhelper/libnginx-mod-rtmp/dbgsym-root
+dpkg-deb: building package 'libnginx-mod-rtmp-dbgsym' in 'debian/.debhelper/scratch-space/build-libnginx-mod-rtmp/libnginx-mod-rtmp-dbgsym_1.18.0-6ubuntu2_amd64.deb'.
+	Renaming libnginx-mod-rtmp-dbgsym_1.18.0-6ubuntu2_amd64.deb to libnginx-mod-rtmp-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+	mv debian/.debhelper/scratch-space/build-libnginx-mod-rtmp/libnginx-mod-rtmp-dbgsym_1.18.0-6ubuntu2_amd64.deb ../libnginx-mod-rtmp-dbgsym_1.18.0-6ubuntu2_amd64.ddeb
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary -mLaunchpad Build Daemon <buildd@lcy01-amd64-009.buildd> >../nginx_1.18.0-6ubuntu2_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
